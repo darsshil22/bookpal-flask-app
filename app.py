@@ -17,7 +17,7 @@ def webhook():
 
     if intent == "GetWeatherInfo":
         # Extract city from user input
-        city = req.get('queryResult', {}).get('parameters', {}).get('city', 'Unknown Location')
+        city = req.get('queryResult', {}).get('parameters', {}).get('geo-city', 'Unknown Location')
         response_text = f"The current weather in {city} is sunny and 25°C."
     else:
         response_text = "Sorry, I couldn't understand that intent."
